@@ -145,3 +145,9 @@ textarea#saidaDesconto{
   .form-grid{ grid-template-columns: 1fr }
   .campos-consumo input{ width:100% }
 }
+
+.logo {
+max-width: 4%; 
+height: auto; 
+margin-bottom: 5px;
+}
