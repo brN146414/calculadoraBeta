@@ -155,14 +155,14 @@ VALOR IGREEN: ${formatBRL(contaComDesconto)}
       default:
         alert('Tipo de conta inválido.'); return;
     }
-    resultadoMedia.textContent = Média ${mediaAjustada.toFixed(2)} kWh;
+    resultadoMedia.textContent = `Média ajustada: ${mediaAjustada.toFixed(2)} kWh`;
   });
 
   excluirMediaBtn.addEventListener('click', () => {
     qtdMesesInput.value = '';
     camposConsumo.innerHTML = '';
     entradasKwh = [];
-    resultadoMedia.textContent = '';
-  });
+    resultadoMedia.textContent = '';
+  });
 
 });

@@ -143,5 +143,5 @@ textarea#saidaDesconto{
 .footer{ margin-top:18px; color:var(--muted); font-size:18px; text-align:center }
 @media (max-width:720px){
   .form-grid{ grid-template-columns: 1fr }
-  .campos-consumo input{ width:100% }
+  .campos-consumo input{width:100% }
 }
