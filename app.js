@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const descontoAmount = contaBase * (descontoPct / 100);
     const contaComDesconto = contaBase - descontoAmount + taxas;
 
-    const texto = `
+    const texto = ` 
 CÁLCULO DO DESCONTO
 
 SEM DESCONTO:
@@ -87,7 +87,7 @@ TOTAL: ${formatBRL(contaComTaxas)} SEM DESCONTO!
 COM DESCONTO IGREEN:
 DESCONTO IGREEN: ${formatBRL(descontoAmount)}
 VALOR DISTIBUIDORA: ${formatBRL(contaComTaxas)}
-VALOR IGREEN: ${formatBRL(contaComDesconto)}
+VALOR IGREEN (BOLETO): ${formatBRL(contaComDesconto)}
     `.trim();
 
     saida.value = texto;
