@@ -1,67 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema iGreen - Calculadoras de Energia</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sistema iGreen - Calculadoras de Energia</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Sistema iGreen - Calculadoras de Energia</h1>
+  <div class="app">
+    <header>
+      <h1>Sistema iGreen</h1>
+      <p class="subtitle">Calculadoras de Energia</p>
+    </header>
 
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="desconto">Calculadora de Desconto</button>
-            <button class="tab-btn" data-tab="media">Calculadora de Média</button>
+    <nav class="tabs">
+      <button class="tab-btn active" data-target="desconto">Calculadora de Desconto</button>
+      <button class="tab-btn" data-target="media">Calculadora de Média</button>
+    </nav>
+
+    <main>
+      <!-- Calculadora de Desconto -->
+      <section id="desconto" class="tab-panel active">
+        <h2>CALCULADORA DE DESCONTO IGREEN</h2>
+
+        <div class="form-grid">
+          <label>Total de kWh consumido:
+            <input id="kwh" placeholder="ex: 150,25" />
+          </label>
+
+          <label>Preço do kWh (R$):
+            <input id="precoKwh" placeholder="ex: 0,789" />
+          </label>
+
+          <label>Contrib. Iluminação Pública (R$):
+            <input id="ilumPublica" placeholder="ex: 5,00" />
+          </label>
+
+          <label>Outras Tarifas (R$):
+            <input id="tarifas" placeholder="ex: 12,50" />
+          </label>
+
+          <label>Valor do desconto iGreen (%):
+            <input id="descontoPct" placeholder="ex: 10" />
+          </label>
         </div>
 
-        <!-- Aba Desconto -->
-        <div id="desconto" class="tab-content active">
-            <h2>CALCULADORA DE DESCONTO IGREEN</h2>
-            <div class="form-group">
-                <label>Total de kWh consumido:</label>
-                <input type="text" id="kWh">
-                <label>Preço do kWh (R$):</label>
-                <input type="text" id="valorkWh">
-                <label>Contrib. Iluminação Pública (R$):</label>
-                <input type="text" id="ilumPublica">
-                <label>Outras Tarifas (R$):</label>
-                <input type="text" id="tarifas">
-                <label>Valor do desconto iGreen (%):</label>
-                <input type="text" id="desconto">
-            </div>
-            <div class="buttons">
-                <button onclick="calcularDesconto()">Calcular Desconto</button>
-                <button onclick="limparDesconto()">Excluir</button>
-            </div>
-            <textarea id="resultadoDesconto" readonly></textarea>
+        <div class="buttons">
+          <button id="calcularDesconto" class="primary">Calcular Desconto</button>
+          <button id="excluirDesconto" class="excluir">Excluir</button>
         </div>
 
-        <!-- Aba Média -->
-        <div id="media" class="tab-content">
-            <h2>CALCULADORA DE MÉDIA DE ENERGIA</h2>
-            <div class="form-group">
-                <label>Quantidade de Meses (1-13):</label>
-                <input type="number" id="qtdMeses" min="1" max="13">
-                <button onclick="criarCampos()">Confirmar</button>
-            </div>
-            <div id="camposMeses" class="form-group"></div>
+        <textarea id="saidaDesconto" readonly></textarea>
+      </section>
 
-            <div class="form-group">
-                <label>Tipo de Conta:</label>
-                <div class="radio-group">
-                    <label><input type="radio" name="tipoConta" value="1" checked> Monofásico</label>
-                    <label><input type="radio" name="tipoConta" value="2"> Bifásico</label>
-                    <label><input type="radio" name="tipoConta" value="3"> Trifásico</label>
-                </div>
-            </div>
+      <section id="media" class="tab-panel">
+        <h2>CALCULADORA DE MÉDIA DE ENERGIA</h2>
 
-            <div class="buttons">
-                <button onclick="calcularMedia()">Calcular Média</button>
-            </div>
-            <p id="resultadoMedia"></p>
+        <div class="form-grid media-grid">
+          <label>Quantidade de Meses (1-13):
+            <input id="qtdMeses" placeholder="ex: 6" />
+          </label>
+          <button id="confirmarMeses" class="primary small">Confirmar</button>
         </div>
-    </div>
-    <script src="script.js"></script>
+
+        <div id="camposConsumo" class="campos-consumo"></div>
+
+        <div class="radio-group">
+          <label><input type="radio" name="tipoConta" value="1" checked /> Monofásico</label>
+          <label><input type="radio" name="tipoConta" value="2" /> Bifásico</label>
+          <label><input type="radio" name="tipoConta" value="3" /> Trifásico</label>
+        </div>
+
+        <div class="buttons">
+          <button id="calcularMedia" class="primary">Calcular Média</button>
+          <button id="excluirMedia" class="excluir">Excluir</button>
+        </div>
+
+        <div id="resultadoMedia" class="resultado-media"></div>
+      </section>
+    </main>
+  </div>
+  <footer class="footer">
+  <small>Feito por: <br>
+    Bruno Lo Monaco  |  Lucas Coutinho  |  Agnes Angelim  |  Mateus Keveny
+  </small>
+  </footer>
+
+  <script src="app.js" defer></script>
 </body>
 </html>
