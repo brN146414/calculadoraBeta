@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema iGreen - Calculadoras de Energia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema iGreen - Calculadoras de Energia</h1>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="desconto">Calculadora de Desconto</button>
+            <button class="tab-btn" data-tab="media">Calculadora de Média</button>
+        </div>
+
+        <!-- Aba Desconto -->
+        <div id="desconto" class="tab-content active">
+            <h2>CALCULADORA DE DESCONTO IGREEN</h2>
+            <div class="form-group">
+                <label>Total de kWh consumido:</label>
+                <input type="text" id="kWh">
+                <label>Preço do kWh (R$):</label>
+                <input type="text" id="valorkWh">
+                <label>Contrib. Iluminação Pública (R$):</label>
+                <input type="text" id="ilumPublica">
+                <label>Outras Tarifas (R$):</label>
+                <input type="text" id="tarifas">
+                <label>Valor do desconto iGreen (%):</label>
+                <input type="text" id="desconto">
+            </div>
+            <div class="buttons">
+                <button onclick="calcularDesconto()">Calcular Desconto</button>
+                <button onclick="limparDesconto()">Excluir</button>
+            </div>
+            <textarea id="resultadoDesconto" readonly></textarea>
+        </div>
+
+        <!-- Aba Média -->
+        <div id="media" class="tab-content">
+            <h2>CALCULADORA DE MÉDIA DE ENERGIA</h2>
+            <div class="form-group">
+                <label>Quantidade de Meses (1-13):</label>
+                <input type="number" id="qtdMeses" min="1" max="13">
+                <button onclick="criarCampos()">Confirmar</button>
+            </div>
+            <div id="camposMeses" class="form-group"></div>
+
+            <div class="form-group">
+                <label>Tipo de Conta:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="tipoConta" value="1" checked> Monofásico</label>
+                    <label><input type="radio" name="tipoConta" value="2"> Bifásico</label>
+                    <label><input type="radio" name="tipoConta" value="3"> Trifásico</label>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button onclick="calcularMedia()">Calcular Média</button>
+            </div>
+            <p id="resultadoMedia"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
