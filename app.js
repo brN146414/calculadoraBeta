@@ -86,7 +86,7 @@ TOTAL: ${formatBRL(contaComTaxas)} SEM DESCONTO!
 
 COM DESCONTO IGREEN:
 DESCONTO IGREEN: ${formatBRL(descontoAmount)}
-VALOR DISTIBUIDORA: ${formatBRL(contaComTaxas)}
+VALOR DISTIBUIDORA: ${formatBRL(taxas)}
 VALOR IGREEN (BOLETO): ${formatBRL(contaComDesconto)}
     `.trim();
 
