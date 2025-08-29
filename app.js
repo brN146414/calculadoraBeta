@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const taxas = ilum + tarifas;
     const contaComTaxas = contaBase + taxas;
     const descontoAmount = contaBase * (descontoPct / 100);
-    const contaComDesconto = contaBase - descontoAmount + taxas;
+    const contaComDesconto = contaBase - descontoAmount;
 
     const texto = ` 
 CÁLCULO DO DESCONTO
