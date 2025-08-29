@@ -152,6 +152,7 @@ VALOR IGREEN (BOLETO): ${formatBRL(contaComDesconto)}
       case 1: mediaAjustada = media - 30; break;
       case 2: mediaAjustada = media - 50; break;
       case 3: mediaAjustada = media - 100; break;
+      case 4: mediaAjustada = media; break;
       default:
         alert('Tipo de conta inválido.'); return;
     }

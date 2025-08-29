@@ -58,10 +58,9 @@
       <section id="media" class="tab-panel">
         <h2>CALCULADORA DE MÉDIA DE ENERGIA</h2>
 
-        <div class="form-grid media-grid">
+        <div class="input-container">
           <label>Quantidade de Meses (1-13):
-            <input id="qtdMeses" placeholder="ex: 6" />
-          </label>
+          <input type="number" id="qtdMeses" placeholder="ex: 6" min="1" max="13">
           <button id="confirmarMeses" class="primary small">Confirmar</button>
         </div>
 
@@ -71,6 +70,7 @@
           <label><input type="radio" name="tipoConta" value="1" checked /> Monofásico</label>
           <label><input type="radio" name="tipoConta" value="2" /> Bifásico</label>
           <label><input type="radio" name="tipoConta" value="3" /> Trifásico</label>
+          <label><input type="radio" name="tipoConta" value="4" /> ATUA</label>
         </div>
 
         <div class="buttons">

@@ -103,7 +103,7 @@ button.excluir{
   cursor:pointer;
   font-weight:600;
 }
-button.small{ padding:8px 10px; font-size:13px }
+button.small{ padding:8px 10px; font-size:13px}
 
 textarea#saidaDesconto{
   width:100%;
@@ -147,7 +147,29 @@ textarea#saidaDesconto{
 }
 
 .logo {
-max-width: 4%; 
+max-width: 6%; 
 height: auto; 
 margin-bottom: 5px;
 }
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.input-container input {
+    flex: 1;
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,0.04);
+    color: var(--text);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.input-container button {
+    padding: 10px 16px;
+} 
