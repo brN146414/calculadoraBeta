@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sistema iGreen - Calculadoras de Energia</title>
   <link rel="stylesheet" href="style.css">
-  <!--DKAY MENTIONED-->
 </head>
 <body>
   <div class="app">
     <header>
       <img src="igreen.png" alt="logoIG" class="logo">
-      <h1>Sistema iGreen</h1>
-      <p class="subtitle">Calculadoras de Energia</p>
+      <h1>Sistemas iGreen</h1>
+      <p class="subtitle">Calculadora de Energia/Desconto</p>
     </header>
 
     <nav class="tabs">
@@ -42,9 +41,26 @@
             <input id="tarifas" placeholder="ex: 12,50" />
           </label>
 
-          <label>Valor do desconto iGreen (%):
-            <input id="descontoPct" placeholder="ex: 10" />
-          </label>
+          <!-- Dropdown ocupa toda a largura -->
+          <div class="desconto-container">
+            <label>Valor do desconto iGreen (%):</label>
+            <div class="custom-dropdown" id="dropdownDesconto">
+              <div class="selected">Selecione</div>
+              <ul class="options">
+                <li data-value="5">5%</li>
+                <li data-value="8">8%</li>
+                <li data-value="10">10%</li>
+                <li data-value="12">12%</li>
+                <li data-value="14">14%</li>
+                <li data-value="16">16%</li>
+                <li data-value="18">18%</li>
+                <li data-value="20">20%</li>
+                <li data-value="24">24%</li>
+                <li data-value="28">28%</li>
+              </ul>
+            </div>
+            <input type="hidden" id="descontoPct" />
+          </div>
         </div>
 
         <div class="buttons">

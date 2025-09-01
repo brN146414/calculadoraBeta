@@ -98,6 +98,30 @@ VALOR IGREEN (BOLETO): ${formatBRL(contaComDesconto)}
     saida.value = '';
   });
 
+// Dropdown moderno para desconto
+const dropdown = document.getElementById('dropdownDesconto');
+const selected = dropdown.querySelector('.selected');
+const options = dropdown.querySelectorAll('.options li');
+const descontoHidden = document.getElementById('descontoPct');
+
+selected.addEventListener('click', () => {
+  dropdown.classList.toggle('open');
+});
+
+options.forEach(option => {
+  option.addEventListener('click', () => {
+    selected.textContent = option.textContent;
+    descontoHidden.value = option.dataset.value;
+    dropdown.classList.remove('open');
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (!dropdown.contains(e.target)) {
+    dropdown.classList.remove('open');
+  }
+});
+
   const qtdMesesInput = document.getElementById('qtdMeses');
   const confirmarMesesBtn = document.getElementById('confirmarMeses');
   const camposConsumo = document.getElementById('camposConsumo');
